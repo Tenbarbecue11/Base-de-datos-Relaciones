@@ -11,6 +11,7 @@ public interface LibroService {
     Libro buscarLibroPorId(long id);
     Libro findbyTitulo(String Titulo);
     Libro findbyAutor(String Autor);
+    Libro  actualizar( Libro libro,long categoriaid,long libroid);
     void  eliminarLibro(long id);
 
 }

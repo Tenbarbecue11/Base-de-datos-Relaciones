@@ -35,8 +35,8 @@ public class CategoriaController {
         return categoriaService.buscarPorNombre(nombre);
     }
     //Actualizar
-    @PostMapping("/{id}")
-    public Categoria Actualizar(@PathVariable long id, @RequestBody Categoria categoria){
+    @PutMapping("/{id}")
+    public Categoria Actualizar(@RequestBody Categoria categoria,@PathVariable long id){
         return categoriaService.Actualizar(id,categoria);
     }
     //Eliminar

@@ -48,6 +48,16 @@ public class LibroServiceImp implements LibroService {
     }
 
     @Override
+    public Libro actualizar( Libro libro,long categoriaid,long libroid) {
+        Libro existente =libroRepository.findById(libroid)
+                .orElseThrow(() -> new RuntimeException("libro no encontrado"));
+        existente.setTitulo(libro.getTitulo());
+        existente.setAutor(libro.getAutor());
+        existente.setYearPublication(libro.getYearPublication());
+        return libroRepository.save(existente);
+    }
+
+    @Override
     public void eliminarLibro(long id) {
         Libro libro = buscarLibroPorId(id);
         libroRepository.delete(libro);

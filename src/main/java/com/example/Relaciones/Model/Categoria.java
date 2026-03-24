@@ -12,7 +12,7 @@ import java.util.List;
 public class Categoria {
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column (nullable = false,unique = true,length = 88)
     private String nombre;
@@ -23,7 +23,7 @@ public class Categoria {
 
     @OneToMany (mappedBy = "Categoria", cascade = CascadeType.ALL,orphanRemoval = false)
     @JsonManagedReference
-    private  List<Libro> Libro = new ArrayList<>();
+    private  List<Libro> libro = new ArrayList<>();
 
     public Categoria() {
     }
@@ -34,11 +34,11 @@ public class Categoria {
         this.description = description;
     }
 
-    public Long getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(long id) {
         this.id = id;
     }
 

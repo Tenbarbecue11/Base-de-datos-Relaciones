@@ -16,7 +16,7 @@ public class Usuario {
 
     @OneToOne (mappedBy = "usuario", cascade = CascadeType.ALL)
     @JsonIgnoreProperties ("ususario")
-    private static PerfilUsuario perfil;
+    private PerfilUsuario perfil;
 
     public Usuario() {
     }

@@ -22,6 +22,11 @@ public class LibroController {
                               @PathVariable long categoriaId) {
         return libroService.guardarLibro(categoriaId,libro);
     }
+    //Actualizar
+    @PutMapping("/{libroid}/categoria/{categoriaId}")
+    public Libro actualizarLibro(@RequestBody Libro libro,@PathVariable long categoriaId,@PathVariable long libroid) {
+        return libroService.actualizar(libro,categoriaId,libroid);
+    }
     //Listar
     @GetMapping
     public List<Libro> obtenerlibros(){

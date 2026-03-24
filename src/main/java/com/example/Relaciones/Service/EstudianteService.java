@@ -8,9 +8,9 @@ public interface EstudianteService {
 
     Estudiante asignarCurso(long id, long cursoId);
     Estudiante CrearEstudiante(Estudiante estudiante);
-    Estudiante findEstudianteById(Long id);
+    Estudiante findEstudianteById(long id);
     Estudiante findEstudianteByNombre(String nombre);
     List<Estudiante> findAllEstudiantes();
-    void deleteEstudianteById(Long id);
+    void deleteEstudianteById(long id);
 
 }

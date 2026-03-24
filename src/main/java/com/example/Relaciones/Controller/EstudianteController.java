@@ -21,8 +21,8 @@ public class EstudianteController {
         return estudianteService.CrearEstudiante(estudiante);
     }
     //AsignarCurso
-    @PutMapping("/{id}")
-    public Estudiante asignarCurso(@RequestBody long estudianteId, @RequestBody long cursoId) {
+    @PutMapping("/{estudianteId}/{cursoId}")
+    public Estudiante asignarCurso(@PathVariable long estudianteId, @PathVariable long cursoId) {
         return estudianteService.asignarCurso(estudianteId,cursoId);
     }
     //Listar

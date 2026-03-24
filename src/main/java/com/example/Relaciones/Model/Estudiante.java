@@ -12,7 +12,7 @@ public class Estudiante {
 
     @Id
     @GeneratedValue (strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
 
     @Column(nullable = false,length = 80)
     private String nombre;
@@ -28,7 +28,7 @@ public class Estudiante {
             joinColumns = @JoinColumn (name = "estudiante_id"),
             inverseJoinColumns = @JoinColumn(name = "curso_id")
     )
-    @JsonProperty("estudiantes")
+    @JsonProperty("cursos")
     private Set<Curso> cursos = new HashSet<>();
 
     public Estudiante() {
@@ -45,7 +45,7 @@ public class Estudiante {
         return id;
     }
 
-    public void setId(long id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

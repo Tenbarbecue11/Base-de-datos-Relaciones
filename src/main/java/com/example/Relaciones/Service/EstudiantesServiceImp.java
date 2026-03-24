@@ -36,7 +36,7 @@ public class EstudiantesServiceImp implements EstudianteService{
     }
 
     @Override
-    public Estudiante findEstudianteById(Long id) {
+    public Estudiante findEstudianteById(long id) {
         return estudianteRepository.findById(id).
                 orElseThrow(() -> new RuntimeException("Estudiante no encontrado"));
     }
@@ -54,7 +54,7 @@ public class EstudiantesServiceImp implements EstudianteService{
     }
 
     @Override
-    public void deleteEstudianteById(Long id) {
+    public void deleteEstudianteById(long id) {
         Estudiante estudiante = findEstudianteById(id);
         estudianteRepository.deleteById(id);
     }

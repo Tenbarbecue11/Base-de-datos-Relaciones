@@ -39,7 +39,8 @@ public class CategoriaServiseImp implements CategoriaService {
 
     @Override
     public Categoria Actualizar(long id, Categoria categoria) {
-        Categoria existente =buscarPorId(categoria.getId());
+        Categoria existente =categoriaRepository.findById(id)
+                        .orElseThrow(() -> new RuntimeException("Categoria no encontrada"));
         existente.setNombre(categoria.getNombre());
         existente.setDescription(categoria.getDescription());
         return categoriaRepository.save(existente);

@@ -14,8 +14,9 @@ public class CursoController {
     public CursoController(CursoService cursoService) {
         this.cursoService = cursoService;
     }
+    //Actualizar
     @PutMapping("/{id}")
-    public Curso guardar(@RequestBody Curso curso, @PathVariable long id){
+    public Curso actualizar(@RequestBody Curso curso, @PathVariable long id){
         return cursoService.actualizar(id, curso);
     }
     //Guardar
